@@ -20,7 +20,7 @@ export default function Component() {
 
       // Parse the event time (e.g., "4:30" => hours and minutes)
       let [hours, minutes] = time.split(":").map(Number);
-
+      minutes = minutes
       // Adjust hours based on AM/PM
       if (modifier === "PM" && hours < 12) {
         hours += 12;
