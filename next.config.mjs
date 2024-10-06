@@ -3,7 +3,12 @@ const nextConfig = {
     images: {
         domains: ['assets.aceternity.com'],
     },
-    output: "export"
+    output: "export",
+    compiler: {
+        // Enables the styled-components SWC transform
+        styledComponents: true
+    }
+
 };
 
 export default nextConfig;

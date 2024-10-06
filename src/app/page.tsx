@@ -7,15 +7,33 @@ import { Button } from "@/components/ui/button"
 import MinFooter from "@/components/ui/Footer"
 import { SCHEDULE } from "@/lib/schedule"
 import { Switch } from "@/components/ui/switch"
+import { fakeTime } from "@/lib/utils"
 
 export default function Component() {
   const [selectedDay, setSelectedDay] = useState("Friday")
   const [showAllEvents, setShowAllEvents] = useState(false)
+  const TEST_MODE = true
 
   const { fridayData, saturdayData, sundayData } = SCHEDULE
 
-  function stripPastEvents(data: { title: string; content: JSX.Element }[]) {
-    const currentTime = new Date();
+  function stripPastEvents(data: { title: string; content: JSX.Element }[], selectedDay: string) {
+    const currentTime = TEST_MODE ? fakeTime(12) : new Date();
+
+    // Map selected day to the specific date in October 2024
+    let eventDate;
+    switch (selectedDay) {
+      case "Friday":
+        eventDate = "2024-10-11";
+        break;
+      case "Saturday":
+        eventDate = "2024-10-12";
+        break;
+      case "Sunday":
+        eventDate = "2024-10-13";
+        break;
+      default:
+        eventDate = "2024-10-11"; // Default to Friday if somehow no day is selected
+    }
 
     return data.filter((event) => {
       // Extract the time from the event title (e.g., "4:30 PM")
@@ -25,6 +43,7 @@ export default function Component() {
       // Parse the event time (e.g., "4:30" => hours and minutes)
       let [hours, minutes] = time.split(":").map(Number);
       minutes = minutes
+
       // Adjust hours based on AM/PM
       if (modifier === "PM" && hours < 12) {
         hours += 12;
@@ -32,12 +51,11 @@ export default function Component() {
         hours = 0; // Midnight edge case
       }
 
-      // Create a new Date object for the event time using today's date
-      const eventTime = new Date();
-      eventTime.setHours(hours, minutes, 0, 0);
+      // Create a full event Date object using the mapped eventDate and parsed time
+      const eventDateTime = new Date(`${eventDate}T${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00`);
 
-      // Compare the event time with the current time
-      return eventTime >= currentTime;
+      // Compare the full event date and time with the current time
+      return eventDateTime >= currentTime;
     });
   }
 
@@ -56,7 +74,7 @@ export default function Component() {
 
   const getData = () => {
     const selectedData = getSelectedData();
-    return showAllEvents ? selectedData : stripPastEvents(selectedData);
+    return showAllEvents ? selectedData : stripPastEvents(selectedData, selectedDay);
   }
 
   return (
@@ -71,7 +89,7 @@ export default function Component() {
         {/* Toggle for "View All Events" */}
         <div className="mb-6">
           <label className="flex items-center gap-2">
-            <span className="text-lg">View all events</span>
+            <span className="text-lg">View past events</span>
             <Switch
               aria-label="Toggle to view all events or upcoming events only"
               checked={showAllEvents}
