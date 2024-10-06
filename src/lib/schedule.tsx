@@ -31,7 +31,7 @@ export const SCHEDULE = {
             "title": "8:00 PM",
             "content": (
                 <>
-                    <EventCard title="Brainstorming Ideas/ Team Matchmaker" roomNumber={"Outside Atrium"} isActive={isEventActive("2024-10-11 20:00")} />
+                    <EventCard title="Brainstorming Ideas / Team Matchmaking" roomNumber={"Outside Atrium"} isActive={isEventActive("2024-10-11 20:00")} />
                 </>
             )
         },
@@ -55,7 +55,7 @@ export const SCHEDULE = {
             "title": "9:30 PM",
             "content": (
                 <>
-                    <EventCard title="Cloudforce Workshop" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-11 21:30")} />
+                    <EventCard title="Microsoft x Cloudforce: Learning Session" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-11 21:30")} />
                 </>
             )
         },
@@ -100,7 +100,7 @@ export const SCHEDULE = {
                 <>
                     <EventCard title="Yoga" roomNumber={"Outside Atrium"} isActive={isEventActive("2024-10-12 10:00")} />
                     <EventCard title="Meditation Club" roomNumber={"Outside Atrium"} isActive={isEventActive("2024-10-12 10:00")} />
-                    <EventCard title="Resume Workshop (Amit from MyTurn)" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-12 10:00")} />
+                    <EventCard title="Resume Workshop with Founder & CEO of MyTurn" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-12 10:00")} />
                 </>
             )
         },
@@ -134,7 +134,7 @@ export const SCHEDULE = {
             "content": (
                 <>
                     <EventCard title="Lunch" roomNumber={"Horizon 2nd Floor"} isActive={isEventActive("2024-10-12 12:00")} />
-                    <EventCard title="Amazon x Codepath Lunch n' Learn Q&A" roomNumber={"Horizon Atrium"} isActive={isEventActive("2024-10-12 12:00")} />
+                    <EventCard title="Amazon x Codepath: Lunch n' Learn Q&A" roomNumber={"Horizon Atrium"} isActive={isEventActive("2024-10-12 12:00")} />
                 </>
             )
         },
@@ -142,7 +142,7 @@ export const SCHEDULE = {
             "title": "1:00 PM",
             "content": (
                 <>
-                    <EventCard title="Microsoft Workshop: GitHub CoPilot" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-12 13:00")} />
+                    <EventCard title="Microsoft: Coding with Github Copilot" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-12 13:00")} />
                 </>
             )
         },
@@ -151,7 +151,7 @@ export const SCHEDULE = {
             "content": (
                 <>
                     <EventCard title="Arcfield: Technical Workshop" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-12 14:00")} />
-                    <EventCard title="Peraton: Recruitment" roomNumber={""} isActive={isEventActive("2024-10-12 14:00")} />
+                    <EventCard title="Peraton: Info Session" roomNumber={""} isActive={isEventActive("2024-10-12 14:00")} />
                 </>
             )
         },
@@ -159,7 +159,7 @@ export const SCHEDULE = {
             "title": "2:30 PM",
             "content": (
                 <>
-                    <EventCard title="Y-Tea handing out Boba" roomNumber={"Horizon 2nd Floor"} isActive={isEventActive("2024-10-12 14:30")} />
+                    <EventCard title="Free Boba! Y-Tea Boba Stall" roomNumber={"Horizon 2nd Floor"} isActive={isEventActive("2024-10-12 14:30")} />
                     <EventCard title="Mason Illustrators" roomNumber={""} isActive={isEventActive("2024-10-12 14:30")} />
                 </>
             )
@@ -169,14 +169,6 @@ export const SCHEDULE = {
             "content": (
                 <>
                     <EventCard title="AI Panel Speaker Event" roomNumber={"Horizon Atrium"} isActive={isEventActive("2024-10-12 15:00")} />
-                </>
-            )
-        },
-        {
-            "title": "5:00 PM",
-            "content": (
-                <>
-                    <EventCard title="Fannie Mae Workshop" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-12 17:00")} />
                 </>
             )
         },
@@ -192,7 +184,8 @@ export const SCHEDULE = {
             "title": "6:00 PM",
             "content": (
                 <>
-                    <EventCard title="Dinner with Microsoft x Cloudforce Networking Opportunity" roomNumber={"Horizon 2019"} isActive={isEventActive("2024-10-12 18:00")} />
+                    <EventCard title="Dinner" roomNumber={"Horizon 2019"} isActive={isEventActive("2024-10-12 18:00")} />
+                    <EventCard title="Microsoft x Cloudforce Networking Dinner" roomNumber={"Horizon 2019"} isActive={isEventActive("2024-10-12 18:00")} />
                 </>
             )
         },
@@ -205,26 +198,10 @@ export const SCHEDULE = {
             )
         },
         {
-            "title": "7:00 PM",
-            "content": (
-                <>
-                    <EventCard title="Workshop Block" roomNumber={""} isActive={isEventActive("2024-10-12 19:00")} />
-                </>
-            )
-        },
-        {
             "title": "8:00 PM",
             "content": (
                 <>
                     <EventCard title="How to Run a Hackathon" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-12 20:00")} />
-                </>
-            )
-        },
-        {
-            "title": "9:00 PM",
-            "content": (
-                <>
-                    <EventCard title="Late Night Activity" roomNumber={""} isActive={isEventActive("2024-10-12 21:00")} />
                 </>
             )
         },
@@ -236,14 +213,6 @@ export const SCHEDULE = {
                 </>
             )
         },
-        {
-            "title": "12:00 AM",
-            "content": (
-                <>
-                    <EventCard title="Late Night Activity" roomNumber={""} isActive={isEventActive("2024-10-13 00:00")} />
-                </>
-            )
-        }
     ],
     "sundayData": [
         {
@@ -258,7 +227,7 @@ export const SCHEDULE = {
             "title": "10:00 AM",
             "content": (
                 <>
-                    <EventCard title="Project Submission Deadline (setup tables)" roomNumber={""} isActive={isEventActive("2024-10-13 10:00")} />
+                    <EventCard title="Project Submission Deadline" roomNumber={""} isActive={isEventActive("2024-10-13 10:00")} />
                 </>
             )
         },
