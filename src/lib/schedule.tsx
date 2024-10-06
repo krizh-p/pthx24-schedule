@@ -117,7 +117,7 @@ export const SCHEDULE = {
             "content": (
                 <>
                     <EventCard title="Salesforce Workshop: Tableau" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-12 11:00")} />
-                    <EventCard title="MetroStar: Intro to Computer Vision" roomNumber={""} isActive={isEventActive("2024-10-12 11:00")} />
+                    <EventCard title="MetroStar: Intro to Computer Vision" roomNumber={"Horizon 1008"} isActive={isEventActive("2024-10-12 11:00")} />
                 </>
             )
         },
@@ -151,7 +151,7 @@ export const SCHEDULE = {
             "content": (
                 <>
                     <EventCard title="Arcfield: Technical Workshop" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-12 14:00")} />
-                    <EventCard title="Peraton: Info Session" roomNumber={""} isActive={isEventActive("2024-10-12 14:00")} />
+                    <EventCard title="Peraton: Info Session" roomNumber={"Horizon 1008"} isActive={isEventActive("2024-10-12 14:00")} />
                 </>
             )
         },
@@ -209,7 +209,7 @@ export const SCHEDULE = {
             "title": "10:30 PM",
             "content": (
                 <>
-                    <EventCard title="Initial submission" roomNumber={""} isActive={isEventActive("2024-10-12 22:30")} />
+                    <EventCard title="Initial submission" roomNumber={"Devpost"} isActive={isEventActive("2024-10-12 22:30")} />
                 </>
             )
         },
