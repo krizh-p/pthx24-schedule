@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import Comment from "@/components/Comment";
 
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
