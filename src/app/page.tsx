@@ -7,17 +7,25 @@ import { Button } from "@/components/ui/button"
 import MinFooter from "@/components/ui/Footer"
 import { SCHEDULE } from "@/lib/schedule"
 import { Switch } from "@/components/ui/switch"
-import { fakeTime } from "@/lib/utils"
+import { getCurrentTime, isEventActive } from "@/lib/utils"
+
+const getDefaultDay = () => {
+  const currentDate = new Date();
+  const currentDay = currentDate.toLocaleDateString("en-US", { weekday: "long" });
+  // Return the current day if it's Friday, Saturday, or Sunday; otherwise return "Friday"
+  return currentDay === "Friday" || currentDay === "Saturday" || currentDay === "Sunday"
+    ? currentDay
+    : "Friday";
+};
 
 export default function Component() {
-  const [selectedDay, setSelectedDay] = useState("Friday")
+  const [selectedDay, setSelectedDay] = useState(getDefaultDay())
   const [showAllEvents, setShowAllEvents] = useState(false)
-  const TEST_MODE = true
 
   const { fridayData, saturdayData, sundayData } = SCHEDULE
 
   function stripPastEvents(data: { title: string; content: JSX.Element }[], selectedDay: string) {
-    const currentTime = TEST_MODE ? fakeTime(12) : new Date();
+    const currentTime = getCurrentTime()
 
     // Map selected day to the specific date in October 2024
     let eventDate;
@@ -36,6 +44,7 @@ export default function Component() {
     }
 
     return data.filter((event) => {
+
       // Extract the time from the event title (e.g., "4:30 PM")
       const eventTimeString = event.title;
       const [time, modifier] = eventTimeString.split(" ");
@@ -52,10 +61,17 @@ export default function Component() {
       }
 
       // Create a full event Date object using the mapped eventDate and parsed time
-      const eventDateTime = new Date(`${eventDate}T${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00`);
+      const eventDateTimeString = `${eventDate} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
 
-      // Compare the full event date and time with the current time
-      return eventDateTime >= currentTime;
+      // Check if the event is active
+      const eventIsActive = isEventActive(eventDateTimeString);
+
+      // Create a full event Date object using the mapped eventDate and parsed time
+      const eventDateTime = new Date(eventDateTimeString);
+
+      // Return true if the event is active or in the future
+      return eventIsActive || eventDateTime >= currentTime;
+
     });
   }
 
@@ -113,8 +129,28 @@ export default function Component() {
 
         {/* Timeline */}
         <div className="w-full max-w-3xl mx-auto">
-          <Timeline key={selectedDay} data={getData()} />
+          {(() => {
+            const data = getData(); // Store the result of getData()
+
+            if (data.length === 0) {
+              return (
+                <div className="text-lg text-muted-foreground">
+                  All events for this day have finished.
+                  <br />
+                  <button
+                    onClick={() => setShowAllEvents((prev) => !prev)}
+                    className="text-blue-500 underline cursor-pointer" // Add styles for the clickable text
+                  >
+                    {`View completed events?`}
+                  </button>
+                </div>
+              );
+            }
+            return <Timeline key={selectedDay} data={data} />;
+          })()}
         </div>
+
+
         {/* Footer */}
         <div className="pt-[10rem] md:pt-[16rem] w-full max-w-3xl mx-auto">
           <MinFooter />

@@ -11,7 +11,7 @@ const EventCard: React.FC<EventCardProps> = ({ title, roomNumber, isActive }) =>
     return (
         <Card
             className={cn(
-                "relative w-full h-full max-w-md p-8 bg-card text-card-foreground rounded-lg shadow-lg border-l-4",
+                "relative w-full max-w-md p-8 bg-card text-card-foreground rounded-lg shadow-lg border-l-4",
                 {
                     "border-l-primary": !isActive,
                     "border-l-green-500": isActive,

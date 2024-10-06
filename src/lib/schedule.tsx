@@ -1,16 +1,5 @@
 import EventCard from "@/components/EventCard";
-
-function isEventActive(eventDateTimeString: string): boolean {
-    const currentTime = new Date(); // Get current time
-    const eventStartTime = new Date(eventDateTimeString); // Parse the event start time
-
-    // Calculate the end time, which is 1 hour after the event start time
-    const eventEndTime = new Date(eventStartTime);
-    eventEndTime.setHours(eventStartTime.getHours() + 1);
-
-    // Check if the current time is within the event duration (start and end)
-    return currentTime >= eventStartTime && currentTime <= eventEndTime;
-}
+import { isEventActive } from "./utils";
 
 export const SCHEDULE = {
     "fridayData": [
@@ -71,14 +60,6 @@ export const SCHEDULE = {
             )
         },
         {
-            "title": "10:00 PM",
-            "content": (
-                <>
-                    <EventCard title="Initial submission" roomNumber={""} isActive={isEventActive("2024-10-11 22:00")} />
-                </>
-            )
-        },
-        {
             "title": "10:30 PM",
             "content": (
                 <>
@@ -88,20 +69,20 @@ export const SCHEDULE = {
         }
     ],
     "saturdayData": [
-        {
-            "title": "4:00 AM",
-            "content": (
-                <>
-                    <EventCard title="Swap volunteers (12-4AM)" roomNumber={""} isActive={isEventActive("2024-10-12 04:00")} />
-                </>
-            )
-        },
+        // {
+        //     "title": "4:00 AM",
+        //     "content": (
+        //         <>
+        //             <EventCard title="Swap volunteers (12-4AM)" roomNumber={""} isActive={isEventActive("2024-10-12 04:00")} />
+        //         </>
+        //     )
+        // },
         {
             "title": "8:00 AM",
             "content": (
                 <>
                     <EventCard title="Breakfast" roomNumber={"Horizon 2nd Floor"} isActive={isEventActive("2024-10-12 08:00")} />
-                    <EventCard title="Swap volunteers (4-8AM)" roomNumber={""} isActive={isEventActive("2024-10-12 08:00")} />
+                    {/* <EventCard title="Swap volunteers (4-8AM)" roomNumber={""} isActive={isEventActive("2024-10-12 08:00")} /> */}
                 </>
             )
         },
@@ -270,8 +251,6 @@ export const SCHEDULE = {
             "content": (
                 <>
                     <EventCard title="Breakfast" roomNumber={""} isActive={isEventActive("2024-10-13 08:00")} />
-                    <EventCard title="Swap volunteers (4-8AM)" roomNumber={""} isActive={isEventActive("2024-10-13 08:00")} />
-                    <EventCard title="Breakfast" roomNumber={""} isActive={isEventActive("2024-10-13 08:00")} />
                 </>
             )
         },
@@ -303,7 +282,7 @@ export const SCHEDULE = {
             "title": "12:45 PM",
             "content": (
                 <>
-                    <EventCard title="Judges receive lunch first, then all non-participant guests" roomNumber={""} isActive={isEventActive("2024-10-13 12:45")} />
+                    <EventCard title="Lunch: Judges first, then guests, then students" roomNumber={""} isActive={isEventActive("2024-10-13 12:45")} />
                 </>
             )
         },
@@ -324,7 +303,7 @@ export const SCHEDULE = {
             )
         },
         {
-            "title": "3:00 PM - 5:00 PM",
+            "title": "3:00 PM",
             "content": (
                 <>
                     <EventCard title="Clean Up" roomNumber={""} isActive={isEventActive("2024-10-13 15:00")} />
