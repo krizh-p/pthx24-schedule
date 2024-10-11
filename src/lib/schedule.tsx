@@ -31,7 +31,7 @@ export const SCHEDULE = {
             "title": "8:00 PM",
             "content": (
                 <>
-                    <EventCard title="Brainstorming Ideas/ Team Matchmaker" roomNumber={"Outside Atrium"} isActive={isEventActive("2024-10-11 20:00")} />
+                    <EventCard title="Brainstorming Ideas / Team Matchmaker" roomNumber={"Horizon 2009"} isActive={isEventActive("2024-10-11 20:00")} />
                 </>
             )
         },
@@ -100,7 +100,7 @@ export const SCHEDULE = {
             "content": (
                 <>
                     <EventCard title="Salesforce: Tableau Workshop" roomNumber={"Horizon 2016"} isActive={isEventActive("2024-10-12 11:00")} />
-                    <EventCard title="MetroStar: Intro to Computer Vision Track" roomNumber={"Horizon 2008"} isActive={isEventActive("2024-10-12 11:00")} />
+                    <EventCard title="MetroStar: Intro to Computer Vision & AWS Rekognition" roomNumber={"Horizon 2008"} isActive={isEventActive("2024-10-12 11:00")} />
                 </>
             )
         },
