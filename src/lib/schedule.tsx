@@ -66,6 +66,14 @@ export const SCHEDULE = {
                     <EventCard title="Python Web Development: Django Quickstart" roomNumber={"Horizon 2017"} isActive={isEventActive("2024-10-11 22:30")} />
                 </>
             )
+        },
+        {
+            "title": "11:15 PM",
+            "content": (
+                <>
+                    <EventCard title="Serverless Clouds: Modal and Beam.cloud" roomNumber={"Horizon 2008"} isActive={isEventActive("2024-10-11 23:15")} />
+                </>
+            )
         }
     ],
     "saturdayData": [
