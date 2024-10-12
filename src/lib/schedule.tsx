@@ -195,6 +195,14 @@ export const SCHEDULE = {
             )
         },
         {
+            "title": "7:00 PM",
+            "content": (
+                <>
+                    <EventCard title="Microsoft: LinkedIn Guide & CoPilot" roomNumber={"Horizon Atrium"} isActive={isEventActive("2024-10-12 18:30")} />
+                </>
+            )
+        },
+        {
             "title": "8:00 PM",
             "content": (
                 <>
