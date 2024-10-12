@@ -125,7 +125,7 @@ export const SCHEDULE = {
             "title": "1:00 PM",
             "content": (
                 <>
-                    <EventCard title="Microsoft: Coding with Github Copilot" roomNumber={"Horizon 2016"} isActive={isEventActive("2024-10-12 13:00")} />
+                    <EventCard title="Microsoft: Coding with Github Copilot" roomNumber={"Horizon 2009"} isActive={isEventActive("2024-10-12 13:00")} />
                 </>
             )
         },
