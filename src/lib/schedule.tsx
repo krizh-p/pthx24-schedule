@@ -52,6 +52,14 @@ export const SCHEDULE = {
             )
         },
         {
+            "title": "9:00 PM",
+            "content": (
+                <>
+                    <EventCard title="Intro to GitHub 2" roomNumber={"Horizon 2009"} isActive={isEventActive("2024-10-11 21:00")} />
+                </>
+            )
+        },
+        {
             "title": "9:30 PM",
             "content": (
                 <>
